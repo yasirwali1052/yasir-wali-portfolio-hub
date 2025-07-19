@@ -11,7 +11,7 @@ const Projects = () => {
       description: "Deep learning model for automated medical image analysis with 94% accuracy in detecting anomalies. Deployed in 3 hospitals serving 10,000+ patients.",
       image: projectsImage,
       technologies: ["TensorFlow", "Computer Vision", "Flask", "AWS", "Docker"],
-      github: "https://github.com",
+      github: "https://github.com/yasirwali1052/Search-Engine-Agent",
       demo: "https://demo.com",
       highlights: ["94% accuracy", "10k+ patients served", "Real-time processing"]
     },
