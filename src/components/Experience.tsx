@@ -1,109 +1,110 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin } from "lucide-react";
+import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior AI/ML Engineer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
+      title: "AI/ML Engineer Intern",
+      company: "Siber Koza Alpha (Onsite)",
+      period: "July 2025 - Present",
+      description:"Contributing to AI/ML initiatives as an intern by developing intelligent multi-agent cybersecurity solutions, leveraging machine learning for real-time threat analysis, anomaly detection, and automated incident response to enhance system security and resilience",
+      skills: ["LLM", "Python", "Langchain", "LangGarph","Fast API"]
+    },
+    {
+      title: "Machine Learning Intern",
+      company: "Dassoft (Onsite)",
+      period: "2025 Jan - 2025 April",
+      description: "As an ML Intern, I worked on designing, training, and evaluating machine learning models, contributing to data preprocessing, model optimization, and real-world AI solution development across various domains.",
+      skills: [ "Python","ML models","Neural Networks","Data Preprocessing","PyTorch", "Model Optimization"]
+    },
+    {
+      title: "Data Analytics Intern",
+      company: "Tech Insight (Remote)",
+      period: "2024 July - 2024 Sep",
+      description: "As a Data Analytics Intern, I assisted in collecting, cleaning, and analyzing large datasets to uncover insights and support data-driven decision-making. I worked on generating reports, building dashboards, and using analytical tools to identify trends, patterns, and key business metrics",
+      skills: ["SQL","Python(numpy,pandas)","Data Visualization","Power BI"]
+    }
+  ];
+
+  const education = [
+    {
+      degree: "BS in Artificial Intelligence",
+      institution: "NUML Islamabad",
       period: "2022 - Present",
-      description: "Leading AI initiatives and developing advanced machine learning models for enterprise clients. Built end-to-end ML pipelines handling millions of data points daily.",
-      achievements: [
-        "Improved model accuracy by 35% using advanced ensemble techniques",
-        "Reduced training time by 60% through optimized data pipelines",
-        "Led a team of 5 ML engineers on multi-million dollar projects"
-      ],
-      technologies: ["Python", "TensorFlow", "AWS", "Kubernetes", "MLflow"]
+      description: "Pursuing a Bachelor’s in AI with focus on core concepts and technologies."
     },
     {
-      title: "Machine Learning Engineer",
-      company: "DataMinds Inc",
-      location: "New York, NY",
-      period: "2021 - 2022",
-      description: "Developed and deployed predictive models for financial services and e-commerce platforms. Specialized in recommendation systems and fraud detection.",
-      achievements: [
-        "Built recommendation engine serving 1M+ users daily",
-        "Developed fraud detection system reducing false positives by 45%",
-        "Implemented real-time ML inference with 99.9% uptime"
-      ],
-      technologies: ["PyTorch", "Scikit-learn", "Docker", "PostgreSQL", "Apache Spark"]
+      degree: "M.S. in Data Science",
+      institution: "MIT",
+      period: "2013 - 2015",
+      description: "Focus on statistical modeling and machine learning algorithms"
     },
     {
-      title: "Data Scientist",
-      company: "InnovateLab",
-      location: "Boston, MA",
-      period: "2020 - 2021",
-      description: "Analyzed complex datasets to extract actionable insights for healthcare and retail clients. Focused on predictive analytics and statistical modeling.",
-      achievements: [
-        "Increased customer retention by 25% through predictive modeling",
-        "Automated reporting processes saving 20 hours/week",
-        "Published 3 research papers in peer-reviewed journals"
-      ],
-      technologies: ["R", "Python", "Tableau", "SQL", "Azure ML"]
+      degree: "B.S. in Computer Engineering",
+      institution: "University of California, Berkeley",
+      period: "2009 - 2013",
+      description: "Foundation in computer systems and programming"
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-section">
+    <section id="experience" className="pt-0 pb-20 bg-gradient-section">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A journey through innovative projects and cutting-edge AI solutions
-          </p>
-        </div>
-
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300">
-              <CardHeader>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <CardTitle className="text-xl text-primary">{exp.title}</CardTitle>
-                    <div className="text-lg font-semibold text-foreground">{exp.company}</div>
-                  </div>
-                  <div className="flex flex-col md:items-end gap-2">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span>{exp.period}</span>
+        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-10 md:p-16">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              My journey building AI solutions and driving innovation
+            </p>
+          </div>
+          
+          {/* Work Experience */}
+          <div className="mb-16">
+            <div className="flex items-center mb-8">
+              <Briefcase className="w-8 h-8 text-primary mr-4" />
+              <h3 className="text-2xl font-bold">Work Experience</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {experiences.map((exp) => (
+                <Card key={exp.title} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{exp.title}</CardTitle>
+                    <div className="text-sm text-muted-foreground">{exp.company} | {exp.period}</div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="mb-4">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill) => (
+                        <Badge key={skill} variant="secondary">{skill}</Badge>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">{exp.description}</p>
-                
-                <div>
-                  <h4 className="font-semibold mb-2">Key Achievements:</h4>
-                  <ul className="space-y-1">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-muted-foreground flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-2">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-primary/20">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+          
+          {/* Education */}
+          <div>
+            <div className="flex items-center mb-8">
+              <GraduationCap className="w-8 h-8 text-primary mr-4" />
+              <h3 className="text-2xl font-bold">Education</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {education.map((edu) => (
+                <Card key={edu.degree} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{edu.degree}</CardTitle>
+                    <div className="text-sm text-muted-foreground">{edu.institution} | {edu.period}</div>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{edu.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
