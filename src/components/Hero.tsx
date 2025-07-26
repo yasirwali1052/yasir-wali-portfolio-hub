@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/self-profile.jpg";
 import React, { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -10,16 +10,24 @@ const NAV_LINKS = [
   { label: "Professional Experience", href: "#experience" },
   { label: "Project Experience", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
-  { label: "Languages", href: "#languages" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Hero = () => {
   const [navOpen, setNavOpen] = useState(false);
+
+  const handleNavClick = (href: string) => {
+    setNavOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="home" className="flex flex-col items-start bg-background pt-8 pb-0 relative">
+    <section id="home" className="flex flex-col items-start bg-background pt-6 pb-0 relative sm:pt-8">
       {/* Main Content Row for larger screens */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto gap-10 md:gap-20">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto gap-6 md:gap-20 px-2 sm:px-0">
         {/* Left: Profile Photo and Hamburger */}
         <div className="flex-1 flex flex-col items-center md:items-start relative w-full">
           {/* Hamburger button for mobile */}
@@ -39,22 +47,21 @@ const Hero = () => {
             </button>
             {/* Dropdown nav links for mobile */}
             {navOpen && (
-              <ul className="absolute left-0 top-12 z-20 w-52 bg-gray-100 border border-gray-300 rounded-lg shadow-lg flex flex-col py-2">
+              <ul className="absolute left-0 top-12 z-20 w-11/12 max-w-xs bg-gray-100 border border-gray-300 rounded-lg shadow-lg flex flex-col py-2 text-base">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href} className="text-center">
-                    <a
-                      href={link.href}
-                      className="block px-4 py-2 text-base text-[#222] hover:text-[#19e6ff] hover:bg-gray-200 transition-all duration-150"
-                      onClick={() => setNavOpen(false)}
+                    <button
+                      onClick={() => handleNavClick(link.href)}
+                      className="block w-full px-4 py-3 text-base text-[#222] hover:text-[#19e6ff] hover:bg-gray-200 transition-all duration-150 bg-transparent border-none cursor-pointer text-left"
                     >
                       {link.label}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
             )}
           </div>
-          <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-4 border-[#19e6ff] bg-white shadow-xl" style={{boxShadow: '0 0 32px #23272f'}}>
+          <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border-4 border-[#19e6ff] bg-white shadow-xl mx-auto" style={{boxShadow: '0 0 32px #23272f'}}>
             <img
               src={profilePhoto}
               alt="Profile"
@@ -63,13 +70,13 @@ const Hero = () => {
           </div>
         </div>
         {/* Right: Text and Buttons */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
           {/* Name */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#666A6D] drop-shadow-lg mb-2">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#666A6D] drop-shadow-lg mb-2">
             Yasir Wali
           </h1>
           {/* Subtitle/Role with Typewriter Effect */}
-          <div className="text-xl sm:text-2xl md:text-3xl font-semibold mb-8 min-h-[2.5rem] text-[#b0c4d6]">
+          <div className="text-lg sm:text-2xl md:text-3xl font-semibold mb-6 min-h-[2.5rem] text-[#b0c4d6]">
             <Typewriter
               words={["AI Engineer", "Machine Learning Engineer", "MLOps Enthusiast"]}
               loop={0}
@@ -81,23 +88,23 @@ const Hero = () => {
             />
           </div>
           {/* Buttons Row - responsive */}
-          <div className="flex flex-col sm:flex-row flex-nowrap justify-center md:justify-start gap-3 mb-10 w-full max-w-full">
-            <Button size="lg" className="bg-[#d3544b] hover:bg-[#b03a2e] text-white font-bold px-2 py-1 sm:px-8 sm:py-4 text-xs sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row flex-nowrap justify-center md:justify-start gap-2 sm:gap-3 mb-8 w-full max-w-full">
+            <Button size="lg" className="bg-[#d3544b] hover:bg-[#b03a2e] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
               <a href="mailto:yasirwali301302@gmail.com" className="flex items-center gap-2">
-                <Mail className="w-4 h-4 sm:w-6 sm:h-6" /> Email Me
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6" /> Email Me
               </a>
             </Button>
-            <Button size="lg" className="bg-[#2176d2] hover:bg-[#1b5fa7] text-white font-bold px-2 py-1 sm:px-8 sm:py-4 text-xs sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
+            <Button size="lg" className="bg-[#2176d2] hover:bg-[#1b5fa7] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
               <a href="https://www.linkedin.com/in/waliyasir" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <Linkedin className="w-4 h-4 sm:w-6 sm:h-6" /> LinkedIn
+                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" /> LinkedIn
               </a>
             </Button>
-            <Button size="lg" className="bg-[#232323] hover:bg-[#111] text-white font-bold px-2 py-1 sm:px-8 sm:py-4 text-xs sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
+            <Button size="lg" className="bg-[#232323] hover:bg-[#111] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
               <a href="https://github.com/yasirwali1052" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <Github className="w-4 h-4 sm:w-6 sm:h-6" /> GitHub
+                <Github className="w-5 h-5 sm:w-6 sm:h-6" /> GitHub
               </a>
             </Button>
-            <Button size="lg" className="bg-[#1ed760] hover:bg-[#17a74a] text-white font-bold px-2 py-1 sm:px-8 sm:py-4 text-xs sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
+            <Button size="lg" className="bg-[#1ed760] hover:bg-[#17a74a] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
               <a href="/YasirWali-Resume.pdf" download className="flex items-center gap-2">
                 Download Resume
               </a>
@@ -105,22 +112,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* Navigation Bar - Hamburger on mobile */}
-      <nav className="w-full flex justify-center mt-4">
-        {/* Nav links: show on desktop, hidden on mobile */}
-        <ul className="hidden md:flex flex-wrap justify-center gap-10 py-4 px-8 bg-gray-100 border border-gray-300 rounded-lg shadow-lg">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href} className="text-center">
-              <a
-                href={link.href}
-                className="text-lg font-medium text-[#222] hover:text-[#19e6ff] transition-all duration-150"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </section>
   );
 };

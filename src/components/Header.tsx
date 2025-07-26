@@ -17,16 +17,24 @@ const Header = () => {
   }, [darkMode]);
 
   const menuItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#skills", label: "Skills" },
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
+    { href: "#about", label: "Profile" },
+    { href: "#skills", label: "Technical Skills" },
+    { href: "#experience", label: "Professional Experience" },
+    { href: "#projects", label: "Project Experience" },
+    { href: "#certifications", label: "Certifications" },
     { href: "#contact", label: "Contact" },
   ];
 
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b shadow-lg">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -35,18 +43,16 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {menuItems.map((item) => (
-                  <NavigationMenuItem key={item.href}>
-                    <NavigationMenuLink href={item.href} className="text-lg font-medium px-2 py-1 rounded bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:text-white transition-colors">
-                      {item.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+          <nav className="hidden md:flex flex-wrap justify-center gap-7 py-3 px-4 bg-gray-100 border border-gray-300 rounded-lg shadow-lg w-full mx-8">
+            {menuItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => handleNavClick(item.href)}
+                className="text-base font-medium text-[#222] hover:text-[#19e6ff] transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
             <Button asChild size="sm" className="ml-2 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-glow">
               <a href="/yasir-wali-cv.pdf" download>
                 <Download className="w-4 h-4 mr-1" /> Download CV
@@ -79,14 +85,13 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t animate-fade-in">
             <nav className="flex flex-col space-y-4 pt-4">
               {menuItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
-                  className="text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium hover:text-white transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-lg text-[#222] font-medium hover:text-[#19e6ff] transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               <Button asChild size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground mt-2">
                 <a href="/yasir-wali-cv.pdf" download>

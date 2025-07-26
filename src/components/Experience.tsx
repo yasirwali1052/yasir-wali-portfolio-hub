@@ -32,48 +32,48 @@ const Experience = () => {
       degree: "BS in Artificial Intelligence",
       institution: "NUML Islamabad",
       period: "2022 - Present",
-      description: "Pursuing a Bachelor’s in AI with focus on core concepts and technologies."
+      description: "Pursuing a Bachelor’s in AI with focus on ML,DL, NLP, CV."
     },
     {
-      degree: "M.S. in Data Science",
-      institution: "MIT",
-      period: "2013 - 2015",
-      description: "Focus on statistical modeling and machine learning algorithms"
+      degree: "FSc Pre-Engineering",
+      institution: "Science Collge Kallar Kahar",
+      period: "2019 - 2021",
+      description: "Focused on core science subjects including Mathematics, Physics, and Statistics"
     },
     {
-      degree: "B.S. in Computer Engineering",
-      institution: "University of California, Berkeley",
-      period: "2009 - 2013",
-      description: "Foundation in computer systems and programming"
+      degree: "Matriculation",
+      institution: "GHSS Chakwal",
+      period: "2017 - 2019",
+      description: "Completed with a focus on Science and Computer Studies"
     }
   ];
 
   return (
-    <section id="experience" className="pt-0 pb-20 bg-gradient-section">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-10 md:p-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Professional Experience</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    <section id="experience" className="scroll-mt-24 pt-0 pb-16">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-10 md:p-16">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">Professional Experience</h2>
+            <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               My journey building AI solutions and driving innovation
             </p>
           </div>
           
           {/* Work Experience */}
-          <div className="mb-16">
-            <div className="flex items-center mb-8">
-              <Briefcase className="w-8 h-8 text-primary mr-4" />
-              <h3 className="text-2xl font-bold">Work Experience</h3>
+          <div className="mb-10 sm:mb-16">
+            <div className="flex items-center mb-6 sm:mb-8">
+              <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 text-primary mr-3 sm:mr-4" />
+              <h3 className="text-lg sm:text-2xl font-bold">Work Experience</h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
               {experiences.map((exp) => (
-                <Card key={exp.title} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300">
+                <Card key={exp.title} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300 w-full">
                   <CardHeader>
-                    <CardTitle className="text-lg">{exp.title}</CardTitle>
-                    <div className="text-sm text-muted-foreground">{exp.company} | {exp.period}</div>
+                    <CardTitle className="text-base sm:text-lg">{exp.title}</CardTitle>
+                    <div className="text-xs sm:text-sm text-muted-foreground">{exp.company} | {exp.period}</div>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{exp.description}</p>
+                    <p className="mb-3 sm:mb-4 text-xs sm:text-base">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill) => (
                         <Badge key={skill} variant="secondary">{skill}</Badge>
@@ -87,19 +87,19 @@ const Experience = () => {
           
           {/* Education */}
           <div>
-            <div className="flex items-center mb-8">
-              <GraduationCap className="w-8 h-8 text-primary mr-4" />
-              <h3 className="text-2xl font-bold">Education</h3>
+            <div className="flex items-center mb-6 sm:mb-8">
+              <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8 text-primary mr-3 sm:mr-4" />
+              <h3 className="text-lg sm:text-2xl font-bold">Education</h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
               {education.map((edu) => (
-                <Card key={edu.degree} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300">
+                <Card key={edu.degree} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300 w-full">
                   <CardHeader>
-                    <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                    <div className="text-sm text-muted-foreground">{edu.institution} | {edu.period}</div>
+                    <CardTitle className="text-base sm:text-lg">{edu.degree}</CardTitle>
+                    <div className="text-xs sm:text-sm text-muted-foreground">{edu.institution} | {edu.period}</div>
                   </CardHeader>
                   <CardContent>
-                    <p>{edu.description}</p>
+                    <p className="text-xs sm:text-base">{edu.description}</p>
                   </CardContent>
                 </Card>
               ))}

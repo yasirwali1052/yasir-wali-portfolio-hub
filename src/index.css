@@ -113,7 +113,27 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Add scroll offset for fixed header */
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+
+  /* Ensure sticky positioning works */
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  /* Ensure proper overflow for sticky elements */
+  section {
+    overflow: visible;
   }
 }
