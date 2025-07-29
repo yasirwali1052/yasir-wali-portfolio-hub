@@ -9,8 +9,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "yasir.wali@email.com",
-      href: "mailto:yasir.wali@email.com"
+      value: "yasirwali301302@gmail.com",
+      href: "mailto:yasirwali301302S@email.com"
     },
     {
       icon: MapPin,
