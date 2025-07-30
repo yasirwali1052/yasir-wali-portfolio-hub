@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "@/assets/prof-pic.jpg";
+import profilePhoto from "@/assets/proff-pic.jpg";
 import React, { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
