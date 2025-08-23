@@ -61,11 +61,11 @@ const Hero = () => {
               </ul>
             )}
           </div>
-          <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border-4 border-[#19e6ff] bg-white shadow-xl mx-auto" style={{boxShadow: '0 0 32px #23272f'}}>
+          <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full bg-white shadow-xl mx-auto" style={{boxShadow: '0 0 10px #23272f'}}>
             <img
               src={profilePhoto}
               alt="Profile"
-              className="w-full h-full object-cover object-center rounded-full border-4 border-[#1a2634]"
+              className="w-full h-full object-cover object-center rounded-full"
             />
           </div>
         </div>
