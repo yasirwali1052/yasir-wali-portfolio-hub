@@ -25,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="flex flex-col items-start bg-background pt-6 pb-16 sm:pb-0 relative sm:pt-8">
+    <section id="home" className="flex flex-col items-start bg-background pt-6 pb-32 sm:pb-0 relative sm:pt-8">
       {/* Main Content Row for larger screens */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto gap-6 md:gap-20 px-2 sm:px-0">
         {/* Left: Profile Photo and Hamburger */}
