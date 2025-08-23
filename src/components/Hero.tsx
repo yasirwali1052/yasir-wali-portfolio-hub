@@ -28,10 +28,10 @@ const Hero = () => {
     <section id="home" className="flex flex-col items-start bg-background pt-6 pb-32 sm:pb-0 relative sm:pt-8">
       {/* Main Content Row for larger screens */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto gap-6 md:gap-20 px-2 sm:px-0">
-        {/* Left: Profile Photo and Hamburger */}
+        {/* Left: Profile Photo */}
         <div className="flex-1 flex flex-col items-center md:items-start relative w-full">
-          {/* Hamburger button for mobile */}
-          <div className="flex md:hidden w-full justify-start mb-2 relative">
+          {/* Hamburger button for mobile - moved to right */}
+          <div className="flex md:hidden w-full justify-end mb-2 relative">
             <button
               className="p-2 rounded focus:outline-none border border-gray-300"
               onClick={() => setNavOpen((open) => !open)}
@@ -47,7 +47,7 @@ const Hero = () => {
             </button>
             {/* Dropdown nav links for mobile */}
             {navOpen && (
-              <ul className="absolute left-0 top-12 z-20 w-11/12 max-w-xs bg-gray-100 border border-gray-300 rounded-lg shadow-lg flex flex-col py-2 text-base">
+              <ul className="absolute right-0 top-12 z-20 w-11/12 max-w-xs bg-gray-100 border border-gray-300 rounded-lg shadow-lg flex flex-col py-2 text-base">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href} className="text-center">
                     <button
@@ -88,7 +88,7 @@ const Hero = () => {
             />
           </div>
           {/* Buttons Row - responsive */}
-          <div className="flex flex-col sm:flex-row flex-nowrap justify-center md:justify-start gap-2 sm:gap-3 mb-8 w-full max-w-full">
+          <div className="flex flex-col sm:flex-row flex-nowrap justify-center md:justify-start gap-4 sm:gap-3 mb-8 w-full max-w-full">
             <Button size="lg" className="bg-[#d3544b] hover:bg-[#b03a2e] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
               <a href="mailto:yasirwali301302@gmail.com" className="flex items-center gap-2">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" /> Email Me
