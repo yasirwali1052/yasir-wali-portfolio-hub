@@ -7,7 +7,7 @@ const Experience = () => {
     {
       title: "AI/ML Engineer Intern",
       company: "Siber Koza Alpha (Onsite)",
-      period: "July 2025 - Present",
+      period: "July 2025 - September 2025",
       description:"Contributing to AI/ML initiatives as an intern by developing intelligent multi-agent cybersecurity solutions, leveraging machine learning for real-time threat analysis, anomaly detection, and automated incident response to enhance system security and resilience",
       skills: ["LLM", "Python", "Langchain", "LangGarph","Fast API"]
     },
