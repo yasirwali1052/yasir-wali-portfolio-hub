@@ -117,11 +117,11 @@ const certificates = [
     url: "https://www.udemy.com/certificate/UC-27b6da4f-1ddb-42fb-ab7a",
   },
   {
-    title: "Power BI",
-    organization: "Simplilearn",
-    date: "March 2025",
-    author: "Krishna Kumar",
-    url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODA5NDQ0MV82NjQ2NTgxMTc0MjkyODE1NjcxNC5wbmciLCJ1c2VybmFtZSI6Illhc2lyIFdhbGkifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F4211%2FPower%2520BI%2520for%2520Beginners%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1292209414253471449&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVj3JJSjXKKQk3C0qyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAE7w68VBAAAA",
+    title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+    organization: "Oracle",
+    date: "September 2025",
+    author: "Oracle University Professors",
+    url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=70E4C2B4A266EA2D9E0B4494B9997DC57F75249851F18F326FD953E776EC824A",
   },
 ];
 

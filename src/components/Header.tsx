@@ -24,7 +24,7 @@ const Header = () => {
     { href: "#certifications", label: "Certifications" },
     { href: "#contact", label: "Contact" },
   ];
-
+  
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
     const element = document.querySelector(href);
