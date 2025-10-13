@@ -105,7 +105,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button size="lg" className="bg-[#1ed760] hover:bg-[#17a74a] text-white font-bold px-2 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-200 whitespace-nowrap w-full sm:w-auto">
-              <a href="/YasirWali-Resume.pdf" download className="flex items-center gap-2">
+              <a href="/resume.pdf" download className="flex items-center gap-2">
                 Download Resume
               </a>
             </Button>
