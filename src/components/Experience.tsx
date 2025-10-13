@@ -5,6 +5,13 @@ import { Briefcase, GraduationCap, Award } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Data Scinece Intern ",
+      company: "10pearls Pakistan (Remote)",
+      period: "2025 Sep - Present",
+      description: "Working on real-time Air Quality Index prediction using live API data, involving data ingestion, cleaning, and feature engineering for model training. Responsible for building and evaluating machine learning models to forecast pollution trends, while implementing CI/CD pipelines for continuous integration, automated retraining, and model deployment.",
+      skills: ["Python","Machine Learning","Fastapi","CI/CD Pipelines","Docker"]
+    },
+    {
       title: "AI/ML Engineer Intern",
       company: "Siber Koza Alpha (Onsite)",
       period: "July 2025 - September 2025",
@@ -17,14 +24,8 @@ const Experience = () => {
       period: "2025 Jan - 2025 April",
       description: "As an ML Intern, I worked on designing, training, and evaluating machine learning models, contributing to data preprocessing, model optimization, and real-world AI solution development across various domains.",
       skills: [ "Python","ML models","Neural Networks","Data Preprocessing","PyTorch", "Model Optimization"]
-    },
-    {
-      title: "Data Analytics Intern",
-      company: "Tech Insight (Remote)",
-      period: "2024 July - 2024 Sep",
-      description: "As a Data Analytics Intern, I assisted in collecting, cleaning, and analyzing large datasets to uncover insights and support data-driven decision-making. I worked on generating reports, building dashboards, and using analytical tools to identify trends, patterns, and key business metrics",
-      skills: ["SQL","Python(numpy,pandas)","Data Visualization","Power BI"]
     }
+    
   ];
 
   const education = [
