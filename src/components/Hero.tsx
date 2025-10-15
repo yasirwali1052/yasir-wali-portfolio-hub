@@ -78,7 +78,7 @@ const Hero = () => {
           {/* Subtitle/Role with Typewriter Effect */}
           <div className="text-lg sm:text-2xl md:text-3xl font-semibold mb-6 min-h-[2.5rem] text-[#b0c4d6]">
             <Typewriter
-              words={["AI/ML Engineer","Machine Learning Operations"]}
+              words={["AI/ML Engineer","MLops"]}
               loop={0}
               cursor
               cursorStyle="|"
