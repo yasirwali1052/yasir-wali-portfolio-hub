@@ -7,7 +7,7 @@ const Experience = () => {
     {
       title: "Data Scinece Intern ",
       company: "10pearls Pakistan (Remote)",
-      period: "2025 Sep - Present",
+      period: "2025 Sep - 2025 Nov",
       description: "Working on real-time Air Quality Index prediction using live API data, involving data ingestion, cleaning, and feature engineering for model training. Responsible for building and evaluating machine learning models to forecast pollution trends, while implementing CI/CD pipelines for continuous integration, automated retraining, and model deployment.",
       skills: ["Python","Machine Learning","Fastapi","CI/CD Pipelines","Docker"]
     },
