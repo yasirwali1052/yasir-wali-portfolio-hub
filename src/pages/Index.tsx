@@ -26,20 +26,18 @@ const StickyNavbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 mt-2 sm:mt-4 px-2 max-w-5xl mx-auto border rounded-lg shadow-lg transition-colors duration-300 ${
-        scrolled ? 'border-blue-700' : 'bg-gray-100 border-gray-300'
-      }`}
-      style={{
-        transition: 'background 0.3s, color 0.3s',
-        background: scrolled ? 'hsl(var(--primary))' : undefined
-      }}
+      className={`sticky top-0 z-50 mt-3 sm:mt-5 px-3 max-w-5xl mx-auto transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/90 shadow-[var(--shadow-lg)] border border-border backdrop-blur'
+          : 'bg-white/70 border border-border shadow-sm backdrop-blur'
+      } rounded-2xl`}
     >
-      <ul className="hidden md:flex flex-nowrap whitespace-nowrap justify-center gap-7 py-3 px-4">
+      <ul className="hidden md:flex flex-nowrap whitespace-nowrap justify-center gap-5 py-3 px-2">
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#about")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Profile
@@ -48,8 +46,8 @@ const StickyNavbar = () => {
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#skills")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Technical Skills
@@ -58,8 +56,8 @@ const StickyNavbar = () => {
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#experience")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Professional Experience
@@ -68,8 +66,8 @@ const StickyNavbar = () => {
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#projects")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Project Experience
@@ -78,8 +76,8 @@ const StickyNavbar = () => {
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#certifications")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Certifications
@@ -88,8 +86,8 @@ const StickyNavbar = () => {
         <li className="text-center">
           <button
             onClick={() => handleNavClick("#contact")}
-            className={`text-base font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer ${
-              scrolled ? 'text-white hover:text-[#19e6ff]' : 'text-[#222] hover:text-[#19e6ff]'
+            className={`text-sm font-medium transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer rounded-lg ${
+              scrolled ? 'text-foreground hover:text-primary' : 'text-foreground/80 hover:text-primary'
             }`}
           >
             Contact
@@ -110,10 +108,10 @@ const certificates = [
     url: "https://www.udemy.com/certificate/UC-27b6da4f-1ddb-42fb-ab7a-1fdd59af513e/",
   },
   {
-    title: "Complete MLOPs bootcamp with AWS, GCP, and Azure",
-    organization: "Udemy",
-    date: "June 2025",
-    author: "Krish Naik",
+    title: "Oracle Cloud Infrastructure Geneartive AI Professional",
+    organization: "Orcale",
+    date: "October 2025",
+    author: "Oracle University Professors",
     url: "https://www.udemy.com/certificate/UC-27b6da4f-1ddb-42fb-ab7a",
   },
   {
@@ -126,20 +124,34 @@ const certificates = [
 ];
 
 const Certificates = () => (
-  <section id="certifications" className="py-8 sm:py-12 lg:py-14 pt-0 pb-2">
-    <div className="container mx-auto px-2 sm:px-4">
-      <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-10 md:p-16">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Certificates</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  <section id="certifications" className="section-block">
+    <div className="shell">
+      <div className="mx-auto max-w-7xl card-shell p-6 sm:p-10 md:p-14">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">Certificates</h2>
+          <div className="mx-auto w-16 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {certificates.map((cert, idx) => (
-            <div key={idx} className="bg-gray-50 border border-gray-100 rounded-xl shadow p-5 flex flex-col items-start justify-between min-h-[220px]">
-              <div>
-                <h3 className="text-lg font-semibold mb-1">{cert.title}</h3>
-                <div className="text-sm text-gray-500 mb-1">{cert.organization}</div>
-                <div className="text-xs text-gray-400 mb-2">Issued: {cert.date}</div>
-                <div className="text-xs text-gray-400 mb-4">Author: {cert.author}</div>
+            <div
+              key={idx}
+              className="relative overflow-hidden rounded-2xl border border-border bg-white/90 shadow-[var(--shadow-lg)] p-5 sm:p-6 flex flex-col gap-3 transition-transform duration-200 hover:-translate-y-1 hover:shadow-glow"
+            >
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent" />
+              <div className="space-y-2 pt-1">
+                <h3 className="text-lg font-semibold leading-tight">{cert.title}</h3>
+                <div className="text-sm text-muted-foreground">{cert.organization}</div>
+                <div className="text-xs text-muted-foreground">Issued: {cert.date}</div>
+                <div className="text-xs text-muted-foreground">Author: {cert.author}</div>
               </div>
-              <a href={cert.url} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold rounded transition">View Credential</a>
+              <a
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-semibold transition-colors duration-200 hover:bg-primary/90"
+              >
+                View Credential
+              </a>
             </div>
           ))}
         </div>

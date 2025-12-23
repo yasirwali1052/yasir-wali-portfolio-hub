@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import projectsImage from "@/assets/projects-bg.jpg";
 import searchengine from "@/assets/Search-Engine.jpg";
 import cyberagent from "@/assets/cyberagent.jpg";
 import nextwordlstm from "@/assets/nextwordlstm.jpg";
@@ -69,21 +68,21 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="scroll-mt-24 py-4">
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-8 md:p-12 lg:p-16">
-          <div className="text-center mb-10 sm:mb-16">
+    <section id="projects" className="section-block scroll-mt-24">
+      <div className="shell">
+        <div className="mx-auto max-w-7xl card-shell p-6 sm:p-10 md:p-14 lg:p-16">
+          <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">Featured Projects</h2>
             <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               Showcase of AI/ML solutions that have made real-world impact
             </p>
           </div>
           <div className="featured-projects-container w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
               {projects.map((project, index) => (
                 <Card
                   key={index}
-                  className="relative bg-white/80 dark:bg-background/80 backdrop-blur-lg border border-border rounded-2xl shadow-xl overflow-hidden transition-transform hover:scale-105 hover:shadow-2xl group w-full max-w-sm mx-auto p-0"
+                  className="relative bg-white/90 dark:bg-background/85 backdrop-blur-lg border border-border rounded-2xl shadow-[var(--shadow-lg)] overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl group w-full max-w-sm mx-auto p-0"
                   style={{ minHeight: '320px' }}
                 >
                   {/* Project Image with overlay and title */}
@@ -93,28 +92,28 @@ const Projects = () => {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 text-white text-lg font-bold drop-shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5" />
+                    <div className="absolute bottom-3 left-3 text-white text-lg font-semibold drop-shadow-lg">
                       {project.title}
                     </div>
                   </div>
                   {/* Card Content */}
-                  <div className="p-4 flex flex-col gap-2">
-                    <p className="text-muted-foreground text-xs line-clamp-2 mb-1">
+                  <div className="p-5 flex flex-col gap-3">
+                    <p className="text-muted-foreground text-sm line-clamp-2">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-1 mb-1">
+                    <div className="flex flex-wrap gap-2 mb-1">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} className="bg-primary/10 text-primary text-xs rounded-full px-2 py-1">
+                        <Badge key={tech} className="bg-primary/10 text-primary text-xs rounded-full px-3 py-1 border border-primary/15">
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex gap-2 mt-1">
-                      <Button asChild variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="View Code">
+                    <div className="flex gap-3 mt-auto">
+                      <Button asChild variant="ghost" size="icon" className="hover:bg-primary/10 rounded-full" aria-label="View Code">
                         <a href={project.github} target="_blank" rel="noopener" title="View Code"><Github className="w-5 h-5" /></a>
                       </Button>
-                      <Button asChild variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="Live Demo">
+                      <Button asChild variant="ghost" size="icon" className="hover:bg-primary/10 rounded-full" aria-label="Live Demo">
                         <a href={project.demo} target="_blank" rel="noopener" title="Live Demo"><ExternalLink className="w-5 h-5" /></a>
                       </Button>
                     </div>

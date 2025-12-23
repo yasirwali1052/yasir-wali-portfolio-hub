@@ -27,18 +27,18 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="scroll-mt-24 py-14">
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-8 md:p-12 lg:p-16">
-          <div className="text-center mb-10 sm:mb-16">
+    <section id="contact" className="scroll-mt-24 section-block">
+      <div className="shell">
+        <div className="mx-auto max-w-7xl card-shell p-6 sm:p-10 md:p-14 lg:p-16">
+          <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">Get In Touch</h2>
             <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               Interested in collaborating or have a project in mind? Drop a message!
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Contact Info & Socials */}
-            <Card className="border-0 shadow-professional flex flex-col justify-between h-full p-6">
+            <Card className="border border-border/70 shadow-[var(--shadow-lg)] flex flex-col justify-between h-full p-6 rounded-2xl">
               <CardContent className="p-0 flex flex-col gap-8 h-full justify-between">
                 <div className="flex flex-col gap-4">
                   {contactInfo.map((info) => (
@@ -57,7 +57,7 @@ const Contact = () => {
                     <a
                       key={social.label}
                       href={social.href}
-                      className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md"
                       aria-label={social.label}
                       title={social.label}
                     >
@@ -68,7 +68,7 @@ const Contact = () => {
               </CardContent>
             </Card>
             {/* Contact Form */}
-            <Card className="border-0 shadow-professional flex flex-col justify-center h-full p-6">
+            <Card className="border border-border/70 shadow-[var(--shadow-lg)] flex flex-col justify-center h-full p-6 rounded-2xl">
               <CardContent className="p-0">
                 <form 
                   action="https://formspree.io/f/mvgqkvjv" 
@@ -77,17 +77,17 @@ const Contact = () => {
                 >
                   <input type="hidden" name="_subject" value="New message from portfolio contact form" />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Input id="name" name="name" placeholder="Name" required />
-                    <Input id="email" name="email" type="email" placeholder="Email" required />
+                    <Input id="name" name="name" placeholder="Name" required className="h-12" />
+                    <Input id="email" name="email" type="email" placeholder="Email" required className="h-12" />
                   </div>
                   <Textarea 
                     id="message" 
                     name="message" 
                     placeholder="Your message..."
-                    rows={4}
+                    rows={5}
                     required
                   />
-                  <Button type="submit" className="w-full bg-gradient-hero text-primary-foreground hover:shadow-glow">
+                  <Button type="submit" className="w-full bg-gradient-hero text-primary-foreground hover:shadow-glow rounded-xl h-12 text-base font-semibold">
                     Send Message
                   </Button>
                 </form>

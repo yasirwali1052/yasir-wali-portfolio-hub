@@ -37,21 +37,21 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="scroll-mt-24 pt-0 pb-16">
-      <div className="container mx-auto px-2 sm:px-4">
-        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-10 md:p-16">
-          <div className="text-center mb-10 sm:mb-16">
+    <section id="skills" className="section-block scroll-mt-24">
+      <div className="shell">
+        <div className="mx-auto max-w-7xl card-shell p-6 sm:p-10 md:p-14">
+          <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">Technical Skills</h2>
             <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               A comprehensive toolkit for building intelligent systems and scalable solutions
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-7">
             {skillCategories.map((category) => (
-              <Card key={category.title} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300 group w-full">
+              <Card key={category.title} className="bg-gradient-card border border-border/60 shadow-[var(--shadow-lg)] hover:shadow-glow transition-transform duration-300 group w-full hover:-translate-y-1">
                 <CardHeader className="text-center">
-                  <category.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <CardTitle className="text-base sm:text-lg">{category.title}</CardTitle>
+                  <category.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                  <CardTitle className="text-base sm:text-lg font-semibold text-foreground">{category.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -59,7 +59,7 @@ const Skills = () => {
                       <Badge 
                         key={skill} 
                         variant="secondary" 
-                        className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                        className="text-xs bg-secondary text-foreground/80 hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-full px-3 py-1"
                       >
                         {skill}
                       </Badge>

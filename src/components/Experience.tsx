@@ -50,10 +50,10 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="scroll-mt-24 pt-0 pb-16">
-      <div className="container mx-auto px-2 sm:px-4">
-        <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-border p-4 sm:p-10 md:p-16">
-          <div className="text-center mb-10 sm:mb-16">
+    <section id="experience" className="section-block scroll-mt-24">
+      <div className="shell">
+        <div className="mx-auto max-w-7xl card-shell p-6 sm:p-10 md:p-14">
+          <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">Professional Experience</h2>
             <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               My journey building AI solutions and driving innovation
@@ -61,23 +61,23 @@ const Experience = () => {
           </div>
           
           {/* Work Experience */}
-          <div className="mb-10 sm:mb-16">
+          <div className="mb-12">
             <div className="flex items-center mb-6 sm:mb-8">
               <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 text-primary mr-3 sm:mr-4" />
               <h3 className="text-lg sm:text-2xl font-bold">Work Experience</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {experiences.map((exp) => (
-                <Card key={exp.title} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300 w-full">
-                  <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">{exp.title}</CardTitle>
+                <Card key={exp.title} className="bg-gradient-card border border-border/60 shadow-[var(--shadow-lg)] hover:shadow-glow transition-transform duration-300 w-full hover:-translate-y-1">
+                  <CardHeader className="space-y-1">
+                    <CardTitle className="text-base sm:text-lg font-semibold">{exp.title}</CardTitle>
                     <div className="text-xs sm:text-sm text-muted-foreground">{exp.company} | {exp.period}</div>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-3 sm:mb-4 text-xs sm:text-base">{exp.description}</p>
+                    <p className="mb-4 text-sm sm:text-base text-foreground/80 leading-relaxed">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill) => (
-                        <Badge key={skill} variant="secondary">{skill}</Badge>
+                        <Badge key={skill} variant="secondary" className="rounded-full text-xs px-3 py-1 bg-secondary text-foreground/80">{skill}</Badge>
                       ))}
                     </div>
                   </CardContent>
@@ -92,15 +92,15 @@ const Experience = () => {
               <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8 text-primary mr-3 sm:mr-4" />
               <h3 className="text-lg sm:text-2xl font-bold">Education</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {education.map((edu) => (
-                <Card key={edu.degree} className="bg-gradient-card border-0 shadow-professional hover:shadow-glow transition-all duration-300 w-full">
+                <Card key={edu.degree} className="bg-gradient-card border border-border/60 shadow-[var(--shadow-lg)] hover:shadow-glow transition-transform duration-300 w-full hover:-translate-y-1">
                   <CardHeader>
-                    <CardTitle className="text-base sm:text-lg">{edu.degree}</CardTitle>
+                    <CardTitle className="text-base sm:text-lg font-semibold">{edu.degree}</CardTitle>
                     <div className="text-xs sm:text-sm text-muted-foreground">{edu.institution} | {edu.period}</div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-xs sm:text-base">{edu.description}</p>
+                    <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">{edu.description}</p>
                   </CardContent>
                 </Card>
               ))}
