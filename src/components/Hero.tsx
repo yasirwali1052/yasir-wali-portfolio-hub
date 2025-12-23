@@ -115,7 +115,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button size="lg" className="bg-gradient-to-r from-[#5B8DEF] to-[#6A5AE0] text-white font-semibold px-4 sm:px-7 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-glow w-full sm:w-auto">
-              <a href="/resume.pdf" download className="flex items-center gap-2">
+              <a href="/yasirwali_resume.pdf" download className="flex items-center gap-2">
                 Download Resume
               </a>
             </Button>
