@@ -112,7 +112,7 @@ const certificates = [
     organization: "Orcale",
     date: "October 2025",
     author: "Oracle University Professors",
-    url: "https://www.udemy.com/certificate/UC-27b6da4f-1ddb-42fb-ab7a",
+    url: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=2BF6CA5D3E758DA02863D23CAFF58C098462BED91D2FB3788F3098FFE6C76BFA",
   },
   {
     title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
