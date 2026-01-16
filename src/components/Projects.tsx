@@ -5,9 +5,9 @@ import { ExternalLink, Github } from "lucide-react";
 import outfitaura from "@/assets/outfitaura.webp";
 import vehicle_domain from "@/assets/vehicle_domain.png";
 import telecom from "@/assets/telecom.png";
-import caltech101 from "@/assets/caltech-101.jpg";
+import aqi from "@/assets/aqi.jpg";
 import f1 from "@/assets/f1-racing.jpg";
-import rainfall from "@/assets/rainfall.jpg";
+import detection_agent from "@/assets/detection_agent.png";
 
 const Projects = () => {
   const projects = [
@@ -48,20 +48,20 @@ const Projects = () => {
       highlights: ["100k+ posts/day", "Multi-language support", "Real-time processing"]
     },
     {
-      title: "Viton-Image-Classifier",
-      description: " Fine-tuned Vision Transformer (ViT) on Caltech-101 for accurate image classification using transfer learning",
-      image: caltech101,
-      technologies: ["PyTorch", "Vision Transformer", "Transfer Learning", "Caltech-101", "Python"],
-      github: "https://github.com/yasirwali1052/ViT-Transformer-ImageClassify",
+      title: "AQI Forecast Pipeline ",
+      description: " End-to-end Air Quality Index (AQI) forecasting system using real-time API data.",
+      image: aqi,
+      technologies:["Python", "Pandas", "NumPy", "Scikit-learn", "Linear Regression","Random Forest", "Streamlit", "Github Actions"],
+      github: "https://github.com/yasirwali1052/AQI-forecast-pipeline",
       demo: "https://demo.com",
       highlights: ["80% time reduction", "99.5% accuracy", "Edge deployment"]
     },
     {
-      title: "Rainfall Prediction",
-      description: "Trained Logistic Regression, XGBoost, and SVC models for rainfall prediction with full preprocessing, evaluation, and model comparison",
-      image:rainfall,
-      technologies: ["Logistic Regression", "XGBoost", "SVC", "Preprocessing", "Model Comparison", "Python"],
-      github: "https://github.com/yasirwali1052/Rain_prediction_Machine_learning",
+      title: "Phishing and Ddos detection agent",
+      description: "Analyzes phishing emails (URL, text, attachments) in real-time with VirusTotal and rule-based tools",
+      image:detection_agent,
+      technologies: ["Python","Langchain","Prompt Template","Tool Calling","Virus Total","Streamlit"],
+      github: "https://github.com/yasirwali1052/Phishing-and-Ddos-Detection-Agent",
       demo: "https://demo.com",
       highlights: ["60% downtime reduction", "50+ facilities", "Real-time monitoring"]
     }
