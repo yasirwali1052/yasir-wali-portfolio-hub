@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import searchengine from "@/assets/Search-Engine.jpg";
-import cyberagent from "@/assets/cyberagent.jpg";
+import vehicle_domain from "@/assets/vehicle_domain.png";
 import nextwordlstm from "@/assets/nextwordlstm.jpg";
 import caltech101 from "@/assets/caltech-101.jpg";
 import f1 from "@/assets/f1-racing.jpg";
@@ -21,11 +21,11 @@ const Projects = () => {
       highlights: ["94% accuracy", "10k+ patients served", "Real-time processing"]
     },
     {
-      title: "Cybersecurity Agent",
-      description: "Real-time system for detecting phishing emails and DDoS attacks using VirusTotal, rules, and LLM-based analysis.",
-      image: cyberagent,
-      technologies: ["VirusTotal", "Rules", "LLM", "Python","Langchain","LangGraph"],
-      github: "https://github.com/yasirwali1052/Phishing-and-Ddos-Detection-Agent",
+      title: "Vehicle Insurance MLOps Pipeline",
+      description: "Built an end-to-end MLOps pipeline for the Vehicle Insurance domain, from MongoDB data ingestion to model training, evaluation, and experiment tracking. Deployed the best model using FastAPI, Docker, and AWS EC2 with proper artifact management and a production-ready setup.",
+      image: vehicle_domain,
+      technologies:  ["Python", "MongoDB", "Scikit-learn", "MLflow", "FastAPI", "Docker", "AWS EC2", "Git & GitHub"],
+      github: "https://github.com/yasirwali1052/MLops-Vehicle-Insurance-Domain",
       demo: "https://demo.com",
       highlights: ["23% annual returns", "Multi-asset trading", "Risk management"]
     },
