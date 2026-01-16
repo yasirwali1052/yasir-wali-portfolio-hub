@@ -32,7 +32,7 @@ const Experience = () => {
     {
       degree: "BS in Artificial Intelligence",
       institution: "NUML Islamabad",
-      period: "2022 - Present",
+      period: "Jan 2022 - Jan 2026",
       description: "Pursuing a Bachelor’s in AI with focus on ML,DL, NLP, CV."
     },
     {
