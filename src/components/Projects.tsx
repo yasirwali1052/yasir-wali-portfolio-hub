@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import searchengine from "@/assets/Search-Engine.jpg";
+import outfitaura from "@/assets/outfitaura.webp";
 import vehicle_domain from "@/assets/vehicle_domain.png";
-import nextwordlstm from "@/assets/nextwordlstm.jpg";
+import telecom from "@/assets/telecom.png";
 import caltech101 from "@/assets/caltech-101.jpg";
 import f1 from "@/assets/f1-racing.jpg";
 import rainfall from "@/assets/rainfall.jpg";
@@ -12,11 +12,11 @@ import rainfall from "@/assets/rainfall.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Search Engine Agent",
-      description: "Smart chatbot with LangChain & LLaMA 3—searches web, Wikipedia, Arxiv, and shows step-by-step reasoning",
-      image: searchengine,
-      technologies: ["Streamlit", "LangChain", "LLaMA 3", "Python","Google Search Tools","LangGraph"],
-      github: "https://github.com/yasirwali1052/Search-Engine-Agent",
+      title: "OutfitAura",
+      description: "Developed a deep learning-based  virtual try-on system using computer vision  to digitally overlay outfits on users. ",
+      image: outfitaura,
+      technologies: [ "LangChain", "LLaMA 3", "Python","HuggingFace","OpenCV","Mediapipe","Fastapi","aws"],
+      github: "https://github.com/yasirwali1052/Final-Year-Project",
       demo: "https://demo.com",
       highlights: ["94% accuracy", "10k+ patients served", "Real-time processing"]
     },
@@ -30,11 +30,11 @@ const Projects = () => {
       highlights: ["23% annual returns", "Multi-asset trading", "Risk management"]
     },
     {
-      title: "Next Word LSTM",
-      description: " A deep learning app that predicts the next word in a sequence using LSTM, trained on Shakespeare’s text and deployed via a Streamlit interface",
-      image: nextwordlstm,
-      technologies: ["NLTK", "LSTM", "Streamlit", "Python","Neural Network"],
-      github: "https://github.com/yasirwali1052/NextWord-LSTM",
+      title: "Telco ChurnGuard MLOps",
+      description: "Telco ChurnGuard MLOps  predicts telecom customer churn with end-to-end ML pipelines, FastAPI deployment, Docker containerization, and MLflow tracking for reproducible, cloud-ready solutions",
+      image: telecom,
+      technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "LightGBM", "FastAPI", "MLflow", "Docker", "AWS EC2"],
+      github: "https://github.com/yasirwali1052/Telco-ChurnGuard-MLops",
       demo: "https://demo.com",
       highlights: ["1M+ users", "40% CTR improvement", "Real-time recommendations"]
     },
