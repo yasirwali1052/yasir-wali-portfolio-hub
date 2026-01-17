@@ -87,7 +87,7 @@ const Hero = () => {
           <div className="text-lg sm:text-2xl md:text-3xl font-semibold text-foreground/80 flex items-center gap-2">
             <span className="h-10 inline-flex items-center px-3 rounded-full bg-primary/10 text-primary font-medium shadow-sm">
               <Typewriter
-                words={["AI/ML Engineer","MLOps Pipeines"]}
+                words={["AI/ML Engineer","MLOps Pipelines"]}
                 loop={0}
                 cursor
                 cursorStyle="|"
