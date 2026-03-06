@@ -5,25 +5,25 @@ import { Briefcase, GraduationCap, Award } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Associate AI/ML Engineer",
+      company: "Siber Koza Alpha - Dassoft (Onsite)",
+      period: "2025 Sep - 2026 Feb",
+      description: "Fine-tuned Qwen vision model for image captioning using PEFT/LoRA, deployed on RunPod for production inference. Built LangGraph and LangChain RAG pipelines implementing Adaptive and Corrective RAG strategies to improve response accuracy across enterprise queries.",
+      skills: ["Python", "LLM Fine-tuning", "Hugging Face", "LangChain", "LangGraph", "RAG", "RunPod", "PEFT/LoRA"]
+    },
+    {
       title: "Data Scinece Intern ",
       company: "10pearls Pakistan (Remote)",
-      period: "2025 Sep - 2025 Nov",
+      period: "2025 June - 2025 August",
       description: "Working on real-time Air Quality Index prediction using live API data, involving data ingestion, cleaning, and feature engineering for model training. Responsible for building and evaluating machine learning models to forecast pollution trends, while implementing CI/CD pipelines for continuous integration, automated retraining, and model deployment.",
       skills: ["Python","Machine Learning","Fastapi","CI/CD Pipelines","Docker"]
     },
     {
       title: "AI/ML Intern",
       company: "Siber Koza Alpha (Onsite)",
-      period: "July 2025 - September 2025",
+      period: "March 2025 - May 2025",
       description:"Contributing to AI/ML initiatives as an intern by developing intelligent multi-agent cybersecurity solutions, leveraging machine learning for real-time threat analysis, anomaly detection, and automated incident response to enhance system security and resilience",
       skills: ["LLM", "Python", "Langchain", "LangGarph","Fast API"]
-    },
-    {
-      title: "Machine Learning Intern",
-      company: "Dassoft (Onsite)",
-      period: "2025 Jan - 2025 April",
-      description: "As an ML Intern, I worked on designing, training, and evaluating machine learning models, contributing to data preprocessing, model optimization, and real-world AI solution development across various domains.",
-      skills: [ "Python","ML models","Neural Networks","Data Preprocessing","PyTorch", "Model Optimization"]
     }
     
   ];
