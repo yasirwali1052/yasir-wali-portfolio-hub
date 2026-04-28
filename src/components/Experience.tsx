@@ -7,21 +7,21 @@ const Experience = () => {
     {
       title: "Associate AI/ML Engineer",
       company: "Siber Koza Alpha - Dassoft (Onsite)",
-      period: "2025 Jan - 2026 Feb",
+      period: "2025 sep - 2026 Feb",
       description: "Fine-tuned Qwen vision model for image captioning using PEFT/LoRA, deployed on RunPod for production inference. Built LangGraph and LangChain RAG pipelines implementing Adaptive and Corrective RAG strategies to improve response accuracy across enterprise queries.",
       skills: ["Python", "LLM Fine-tuning", "Hugging Face", "LangChain", "LangGraph", "RAG", "RunPod", "PEFT/LoRA"]
     },
     {
       title: "Data Scinece Intern ",
       company: "10pearls Pakistan (Remote)",
-      period: "2024 Oct - 2024 Dec",
+      period: "2025 June - 2025 August",
       description: "Working on real-time Air Quality Index prediction using live API data, involving data ingestion, cleaning, and feature engineering for model training. Responsible for building and evaluating machine learning models to forecast pollution trends, while implementing CI/CD pipelines for continuous integration, automated retraining, and model deployment.",
       skills: ["Python","Machine Learning","Fastapi","CI/CD Pipelines","Docker"]
     },
     {
       title: "AI/ML Intern",
       company: "Siber Koza Alpha (Onsite)",
-      period: "June 2024 - August 2024",
+      period: "March 2025 - Ma 2025",
       description:"Contributing to AI/ML initiatives as an intern by developing intelligent multi-agent cybersecurity solutions, leveraging machine learning for real-time threat analysis, anomaly detection, and automated incident response to enhance system security and resilience",
       skills: ["LLM", "Python", "Langchain", "LangGarph","Fast API"]
     }
