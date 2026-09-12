@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -112,13 +116,25 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'blob': {
+					'0%, 100%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					},
+					'33%': {
+						transform: 'translate(20px, -30px) scale(1.05)'
+					},
+					'66%': {
+						transform: 'translate(-15px, 15px) scale(0.97)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-up': 'fade-up 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'blob': 'blob 10s ease-in-out infinite'
 			}
 		}
 	},

@@ -1,115 +1,121 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
-import { Switch } from "@/components/ui/switch";
 import { Menu, X, Download, Moon, Sun } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useTheme } from "@/hooks/use-theme";
+
+const NAV_LINKS = [
+  { href: "#about", label: "Profile" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#certifications", label: "Certifications" },
+  { href: "#contact", label: "Contact" },
+];
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const menuItems = [
-    { href: "#about", label: "Profile" },
-    { href: "#skills", label: "Technical Skills" },
-    { href: "#experience", label: "Professional Experience" },
-    { href: "#projects", label: "Project Experience" },
-    { href: "#certifications", label: "Certifications" },
-    { href: "#contact", label: "Contact" },
-  ];
-  
   const handleNavClick = (href: string) => {
-    setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setMenuOpen(false);
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b shadow-lg">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2 text-2xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent tracking-tight">
-            <span>Personal Portfolio</span>
-          </div>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-[var(--shadow-sm)]"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="shell flex items-center justify-between h-16 sm:h-[72px]">
+        {/* Brand */}
+        <button
+          onClick={() => handleNavClick("#home")}
+          className="font-display text-lg sm:text-xl font-bold gradient-text tracking-tight"
+        >
+          Yasir Wali
+        </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex flex-wrap justify-center gap-7 py-3 px-4 bg-gray-100 border border-gray-300 rounded-lg shadow-lg w-full mx-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-base font-medium text-[#222] hover:text-[#19e6ff] transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer"
-              >
-                {item.label}
-              </button>
-            ))}
-            <Button asChild size="sm" className="ml-2 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-glow">
-              <a href="/yasir-wali-cv.pdf" download>
-                <Download className="w-4 h-4 mr-1" /> Download CV
-              </a>
-            </Button>
-            <div className="flex items-center ml-4">
-              <Switch
-                checked={darkMode}
-                onCheckedChange={setDarkMode}
-                aria-label="Toggle dark mode"
-              />
-              {darkMode ? <Moon className="ml-2 w-5 h-5 text-primary" /> : <Sun className="ml-2 w-5 h-5 text-accent" />}
-            </div>
-          </nav>
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => handleNavClick(link.href)}
+              className="text-sm font-medium text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors duration-200 px-3.5 py-2 rounded-lg"
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+        {/* Actions */}
+        <div className="hidden lg:flex items-center gap-2">
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-border text-foreground/70 hover:text-primary hover:border-primary/40 transition-colors duration-200"
           >
-            {isMenuOpen ? <X /> : <Menu />}
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <Button asChild size="sm" className="bg-gradient-hero text-white shadow-sm hover:shadow-glow transition-shadow duration-300">
+            <a href="/Yasir_Wali_Resume.pdf" download>
+              <Download className="w-4 h-4 mr-1.5" /> Resume
+            </a>
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t animate-fade-in">
-            <nav className="flex flex-col space-y-4 pt-4">
-              {menuItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  className="text-lg text-[#222] font-medium hover:text-[#19e6ff] transition-all duration-150 px-4 py-2 min-w-[90px] text-center bg-transparent border-none cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <Button asChild size="sm" className="bg-gradient-to-r from-primary to-accent text-primary-foreground mt-2">
-                <a href="/yasir-wali-cv.pdf" download>
-                  <Download className="w-4 h-4 mr-1" /> Download CV
-                </a>
-              </Button>
-              <div className="flex items-center gap-2 mt-4">
-                <Switch
-                  checked={darkMode}
-                  onCheckedChange={setDarkMode}
-                  aria-label="Toggle dark mode"
-                />
-                {darkMode ? <Moon className="w-5 h-5 text-primary" /> : <Sun className="w-5 h-5 text-accent" />}
-              </div>
-            </nav>
-          </div>
-        )}
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-border text-foreground/70"
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile nav panel */}
+      {menuOpen && (
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-lg animate-fade-up">
+          <nav className="shell flex flex-col py-3">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="text-left text-base font-medium text-foreground/80 hover:text-primary transition-colors duration-150 px-2 py-3 rounded-lg"
+              >
+                {link.label}
+              </button>
+            ))}
+            <Button asChild size="sm" className="mt-2 bg-gradient-hero text-white">
+              <a href="/Yasir_Wali_Resume.pdf" download>
+                <Download className="w-4 h-4 mr-1.5" /> Download Resume
+              </a>
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
