@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Twitter, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import XLogo from "@/components/icons/XLogo";
 
 const NAV_LINKS = [
   { href: "#about", label: "Profile" },
@@ -12,7 +13,7 @@ const NAV_LINKS = [
 const SOCIAL_LINKS = [
   { icon: Github, href: "https://github.com/yasirwali1052", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/waliyasir", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/YasirWali18", label: "Twitter" },
+  { icon: XLogo, href: "https://x.com/YasirWali18", label: "X (Twitter)" },
   { icon: Mail, href: "mailto:yasirwali301302@gmail.com", label: "Email" },
 ];
 

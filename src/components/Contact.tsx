@@ -2,8 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
+import XLogo from "@/components/icons/XLogo";
 
 const Contact = () => {
   const { ref, visible } = useReveal<HTMLDivElement>();
@@ -26,7 +27,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/yasirwali1052", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/waliyasir", label: "LinkedIn" },
-    { icon: Twitter, href: "https://x.com/YasirWali18", label: "Twitter" },
+    { icon: XLogo, href: "https://x.com/YasirWali18", label: "X (Twitter)" },
   ];
 
   return (
