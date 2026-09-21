@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "portfolio-theme";
 
 function getInitialTheme(): boolean {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return true;
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored) return stored === "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return true;
 }
 
 /** Shared dark-mode state, persisted to localStorage and reflected on <html class="dark">. */
